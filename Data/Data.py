@@ -16,3 +16,6 @@ def txt2hdf():
     df[3].to_hdf('train.h5', 'bill_detail', complevel=9, complib='zlib')
     df[4].to_hdf('train.h5', 'loan_time', complevel=9, complib='zlib')
     df[5].to_hdf('train.h5', 'overdue', complevel=9, complib='zlib')
+
+def read_hdf():
+    
