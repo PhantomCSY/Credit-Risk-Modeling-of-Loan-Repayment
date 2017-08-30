@@ -31,6 +31,6 @@ def read_hdf():
     store = pd.HDFStore('train.h5', 'r')
     keys = store.keys()
     store.close()
-    df = [pd.read_hdf('train.h5', key) for key in keys]
+    df_dict = {key:pd.read_hdf('train.h5', key) for key in keys}
     
-    return df
+    return df_dict
