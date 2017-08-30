@@ -27,7 +27,10 @@ def txt2hdf():
 
 def read_hdf():
     import pandas as pd
+    
     store = pd.HDFStore('train.h5', 'r')
-    df = [pd.read_hdf('train.h5', key) for key in store.keys()]
+    keys = store.keys()
     store.close()
+    df = [pd.read_hdf('train.h5', key) for key in keys]
+    
     return df
